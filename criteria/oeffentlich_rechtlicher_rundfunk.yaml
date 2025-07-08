@@ -16,123 +16,74 @@ dimensions:
       grundinformationen:
         name: "Grundinformationen"
         description: "Verfügbarkeit grundlegender Informationen über die Rundfunkanstalt"
-        factor_types:
-          kontakt_impressum:
-            name: "Kontakt und Impressum"
-            description: "Vollständige Kontakt- und Impressumsdaten"
-            criteria:
-              vollstaendiges_impressum:
-                name: "Vollständiges Impressum vorhanden"
-                description: "Impressum mit allen gesetzlich vorgeschriebenen Angaben ist verfügbar"
-                type: "operational"
-                patterns:
-                  - "impressum"
-                  - "kontakt"
-                  - "adresse"
-                  - "telefon"
-                  - "email"
-                  - "verantwortlich"
-                weight: 1.0
-              
-              ansprechpartner:
-                name: "Klare Ansprechpartner benannt"
-                description: "Ansprechpartner für verschiedene Bereiche sind klar benannt"
-                type: "operational"
-                patterns:
-                  - "ansprechpartner"
-                  - "redaktion"
-                  - "pressestelle"
-                  - "kontaktperson"
-                  - "zuständig"
-                weight: 1.0
+        criteria:
+          vollstaendiges_impressum:
+            name: "Vollständiges Impressum vorhanden"
+            description: "Impressum mit allen gesetzlich vorgeschriebenen Angaben ist verfügbar"
+            type: "operational"
+            patterns:
+              text: ["impressum", "kontakt", "adresse", "telefon", "email", "verantwortlich"]
+            weight: 1.0
           
-          auftrag_mission:
-            name: "Auftrag und Mission"
-            description: "Öffentlich-rechtlicher Auftrag und Mission"
-            criteria:
-              programmauftrag:
-                name: "Programmauftrag klar beschrieben"
-                description: "Der öffentlich-rechtliche Programmauftrag ist klar beschrieben"
-                type: "strategic"
-                patterns:
-                  - "programmauftrag"
-                  - "öffentlich-rechtlich"
-                  - "auftrag"
-                  - "mission"
-                  - "grundversorgung"
-                  - "bildungsauftrag"
-                weight: 1.0
-              
-              gesellschaftlicher_auftrag:
-                name: "Gesellschaftlicher Auftrag definiert"
-                description: "Der gesellschaftliche Auftrag und die Rolle in der Demokratie sind definiert"
-                type: "strategic"
-                patterns:
-                  - "gesellschaftlicher auftrag"
-                  - "demokratie"
-                  - "meinungsbildung"
-                  - "gesellschaft"
-                  - "öffentlichkeit"
-                weight: 1.0
+          ansprechpartner:
+            name: "Klare Ansprechpartner benannt"
+            description: "Ansprechpartner für verschiedene Bereiche sind klar benannt"
+            type: "operational"
+            patterns:
+              text: ["ansprechpartner", "redaktion", "pressestelle", "kontaktperson", "zuständig"]
+            weight: 1.0
+          
+          programmauftrag:
+            name: "Programmauftrag klar beschrieben"
+            description: "Der öffentlich-rechtliche Programmauftrag ist klar beschrieben"
+            type: "strategic"
+            patterns:
+              text: ["programmauftrag", "öffentlich-rechtlich", "auftrag", "mission", "grundversorgung", "bildungsauftrag"]
+            weight: 1.0
+          
+          gesellschaftlicher_auftrag:
+            name: "Gesellschaftlicher Auftrag definiert"
+            description: "Der gesellschaftliche Auftrag und die Rolle in der Demokratie sind definiert"
+            type: "strategic"
+            patterns:
+              text: ["gesellschaftlicher auftrag", "demokratie", "meinungsbildung", "gesellschaft", "öffentlichkeit"]
+            weight: 1.0
       
       organisation_struktur:
         name: "Organisation und Struktur"
         description: "Transparenz über Organisationsstruktur und Gremien"
-        factor_types:
-          organisationsstruktur:
-            name: "Organisationsstruktur"
-            description: "Aufbau und Struktur der Organisation"
-            criteria:
-              organigramm:
-                name: "Organigramm verfügbar"
-                description: "Organigramm oder Darstellung der Organisationsstruktur ist verfügbar"
-                type: "operational"
-                patterns:
-                  - "organigramm"
-                  - "organisation"
-                  - "struktur"
-                  - "aufbau"
-                  - "hierarchie"
-                weight: 1.0
-              
-              gremien_darstellung:
-                name: "Gremien dargestellt"
-                description: "Rundfunkrat, Verwaltungsrat und andere Gremien sind dargestellt"
-                type: "operational"
-                patterns:
-                  - "rundfunkrat"
-                  - "verwaltungsrat"
-                  - "gremien"
-                  - "aufsicht"
-                  - "kontrolle"
-                weight: 1.0
+        criteria:
+          organigramm:
+            name: "Organigramm verfügbar"
+            description: "Organigramm oder Darstellung der Organisationsstruktur ist verfügbar"
+            type: "operational"
+            patterns:
+              text: ["organigramm", "organisation", "struktur", "aufbau", "hierarchie"]
+            weight: 1.0
           
-          fuehrung_leitung:
-            name: "Führung und Leitung"
-            description: "Informationen über Führungskräfte und Leitung"
-            criteria:
-              geschaeftsfuehrung:
-                name: "Geschäftsführung vorgestellt"
-                description: "Geschäftsführung oder Intendanz ist mit Personen vorgestellt"
-                type: "operational"
-                patterns:
-                  - "intendant"
-                  - "geschäftsführung"
-                  - "direktor"
-                  - "leitung"
-                  - "vorstand"
-                weight: 1.0
-              
-              programmverantwortung:
-                name: "Programmverantwortung benannt"
-                description: "Verantwortliche für Programmbereiche sind benannt"
-                type: "operational"
-                patterns:
-                  - "programmverantwortung"
-                  - "chefredakteur"
-                  - "programmleitung"
-                  - "redaktionsleitung"
-                weight: 1.0
+          gremien_darstellung:
+            name: "Gremien dargestellt"
+            description: "Rundfunkrat, Verwaltungsrat und andere Gremien sind dargestellt"
+            type: "operational"
+            patterns:
+              text: ["rundfunkrat", "verwaltungsrat", "gremien", "aufsicht", "kontrolle"]
+            weight: 1.0
+          
+          geschaeftsfuehrung:
+            name: "Geschäftsführung vorgestellt"
+            description: "Geschäftsführung oder Intendanz ist mit Personen vorgestellt"
+            type: "operational"
+            patterns:
+              text: ["intendant", "geschäftsführung", "direktor", "leitung", "vorstand"]
+            weight: 1.0
+          
+          programmverantwortung:
+            name: "Programmverantwortung benannt"
+            description: "Verantwortliche für Programmbereiche sind benannt"
+            type: "operational"
+            patterns:
+              text: ["programmverantwortung", "chefredakteur", "programmleitung", "redaktionsleitung"]
+            weight: 1.0
 
   partizipation:
     name: "Partizipation"
@@ -141,94 +92,58 @@ dimensions:
       publikumsbeteiligung:
         name: "Publikumsbeteiligung"
         description: "Möglichkeiten zur aktiven Beteiligung des Publikums"
-        factor_types:
-          service_kontakt:
-            name: "Service und Kontakt"
-            description: "Publikumsservice und Kontaktmöglichkeiten"
-            criteria:
-              zuschauerservice:
-                name: "Umfassender Zuschauerservice"
-                description: "Zuschauerservice mit verschiedenen Kontaktmöglichkeiten ist verfügbar"
-                type: "operational"
-                patterns:
-                  - "zuschauerservice"
-                  - "publikumsservice"
-                  - "hörerservice"
-                  - "service"
-                  - "hotline"
-                weight: 1.0
-              
-              feedback_system:
-                name: "Strukturiertes Feedback-System"
-                description: "System für Zuschauer-Feedback und Rückmeldungen ist etabliert"
-                type: "operational"
-                patterns:
-                  - "feedback"
-                  - "rückmeldung"
-                  - "bewertung"
-                  - "meinung"
-                  - "kommentar"
-                weight: 1.0
+        criteria:
+          zuschauerservice:
+            name: "Umfassender Zuschauerservice"
+            description: "Zuschauerservice mit verschiedenen Kontaktmöglichkeiten ist verfügbar"
+            type: "operational"
+            patterns:
+              text: ["zuschauerservice", "publikumsservice", "hörerservice", "service", "hotline"]
+            weight: 1.0
           
-          interaktion_dialog:
-            name: "Interaktion und Dialog"
-            description: "Dialogformate und Interaktionsmöglichkeiten"
-            criteria:
-              buergerdialog:
-                name: "Bürgerdialog-Formate"
-                description: "Formate für den Dialog mit Bürgern sind etabliert"
-                type: "operational"
-                patterns:
-                  - "bürgerdialog"
-                  - "diskussion"
-                  - "forum"
-                  - "dialog"
-                  - "beteiligung"
-                weight: 1.0
-              
-              social_media_interaktion:
-                name: "Social Media Interaktion"
-                description: "Aktive Interaktion über Social Media Kanäle"
-                type: "operational"
-                patterns:
-                  - "social media"
-                  - "facebook"
-                  - "twitter"
-                  - "instagram"
-                  - "interaktion"
-                weight: 1.0
+          feedback_system:
+            name: "Strukturiertes Feedback-System"
+            description: "System für Zuschauer-Feedback und Rückmeldungen ist etabliert"
+            type: "operational"
+            patterns:
+              text: ["feedback", "rückmeldung", "bewertung", "meinung", "kommentar"]
+            weight: 1.0
+          
+          buergerdialog:
+            name: "Bürgerdialog-Formate"
+            description: "Formate für den Dialog mit Bürgern sind etabliert"
+            type: "operational"
+            patterns:
+              text: ["bürgerdialog", "diskussion", "forum", "dialog", "beteiligung"]
+            weight: 1.0
+          
+          social_media_interaktion:
+            name: "Social Media Interaktion"
+            description: "Aktive Interaktion über Social Media Kanäle"
+            type: "operational"
+            patterns:
+              text: ["social media", "facebook", "twitter", "instagram", "interaktion"]
+            weight: 1.0
       
       demokratische_kontrolle:
         name: "Demokratische Kontrolle"
         description: "Gremien und demokratische Kontrollmechanismen"
-        factor_types:
+        criteria:
           aufsichtsgremien:
-            name: "Aufsichtsgremien"
-            description: "Rundfunkrat und andere Aufsichtsgremien"
-            criteria:
-              rundfunkrat_transparent:
-                name: "Rundfunkrat transparent dargestellt"
-                description: "Rundfunkrat, seine Zusammensetzung und Aufgaben sind transparent dargestellt"
-                type: "strategic"
-                patterns:
-                  - "rundfunkrat"
-                  - "aufsicht"
-                  - "kontrolle"
-                  - "gremium"
-                  - "zusammensetzung"
-                weight: 1.0
-              
-              gremienarbeit_oeffentlich:
-                name: "Öffentliche Gremienarbeit"
-                description: "Gremienarbeit ist öffentlich und nachvollziehbar"
-                type: "strategic"
-                patterns:
-                  - "öffentlich"
-                  - "sitzung"
-                  - "protokoll"
-                  - "beschluss"
-                  - "nachvollziehbar"
-                weight: 1.0
+            name: "Aufsichtsgremien transparent"
+            description: "Aufsichtsgremien und deren Zusammensetzung sind transparent dargestellt"
+            type: "strategic"
+            patterns:
+              text: ["aufsichtsgremium", "rundfunkrat", "verwaltungsrat", "kontrolle", "aufsicht"]
+            weight: 1.0
+          
+          oeffentliche_sitzungen:
+            name: "Öffentliche Sitzungen"
+            description: "Sitzungen von Gremien sind öffentlich oder werden dokumentiert"
+            type: "strategic"
+            patterns:
+              text: ["öffentlich", "sitzung", "protokoll", "beschluss", "nachvollziehbar"]
+            weight: 1.0
 
   rechenschaftslegung:
     name: "Rechenschaftslegung"
@@ -237,61 +152,30 @@ dimensions:
       finanzielle_transparenz:
         name: "Finanzielle Transparenz"
         description: "Offenlegung von Finanzen und Haushaltsführung"
-        factor_types:
-          berichte_dokumentation:
-            name: "Berichte und Dokumentation"
-            description: "Verfügbarkeit von Geschäfts- und Finanzberichten"
-            criteria:
-              jahresbericht:
-                name: "Jahresbericht verfügbar"
-                description: "Aktueller Jahres- oder Geschäftsbericht ist öffentlich verfügbar"
-                type: "strategic"
-                patterns:
-                  - "jahresbericht"
-                  - "geschäftsbericht"
-                  - "tätigkeitsbericht"
-                  - "annual report"
-                weight: 1.0
-              
-              finanzbericht:
-                name: "Detaillierter Finanzbericht"
-                description: "Detaillierte Finanzberichte oder Haushaltsplan sind verfügbar"
-                type: "strategic"
-                patterns:
-                  - "finanzbericht"
-                  - "haushalt"
-                  - "budget"
-                  - "bilanz"
-                  - "finanzen"
-                weight: 1.0
+        criteria:
+          jahresabschluss:
+            name: "Jahresabschluss veröffentlicht"
+            description: "Jahresabschluss oder Geschäftsbericht ist öffentlich verfügbar"
+            type: "operational"
+            patterns:
+              text: ["jahresabschluss", "geschäftsbericht", "finanzbericht", "bilanz", "jahresbericht"]
+            weight: 1.0
           
-          rundfunkbeitrag_transparenz:
-            name: "Rundfunkbeitrag Transparenz"
-            description: "Transparenz über Rundfunkbeitrag und dessen Verwendung"
-            criteria:
-              beitragsinformation:
-                name: "Rundfunkbeitrag erklärt"
-                description: "Informationen über Höhe und Zweck des Rundfunkbeitrags sind verfügbar"
-                type: "strategic"
-                patterns:
-                  - "rundfunkbeitrag"
-                  - "gebühr"
-                  - "finanzierung"
-                  - "beitrag"
-                  - "gez"
-                weight: 1.0
-              
-              mittelverwendung:
-                name: "Transparente Mittelverwendung"
-                description: "Verwendung der Rundfunkbeiträge ist transparent dargestellt"
-                type: "strategic"
-                patterns:
-                  - "verwendung"
-                  - "ausgaben"
-                  - "kosten"
-                  - "mittel"
-                  - "investition"
-                weight: 1.0
+          haushaltsplanung:
+            name: "Haushaltsplanung transparent"
+            description: "Haushaltsplanung und Budgetverteilung sind transparent dargestellt"
+            type: "operational"
+            patterns:
+              text: ["haushaltsplan", "budget", "finanzplanung", "ausgaben", "einnahmen"]
+            weight: 1.0
+          
+          gebuehrenverwendung:
+            name: "Gebührenverwendung dokumentiert"
+            description: "Verwendung der Rundfunkgebühren ist dokumentiert und nachvollziehbar"
+            type: "strategic"
+            patterns:
+              text: ["rundfunkgebühr", "gebührenverwendung", "beitrag", "finanzierung", "verwendung"]
+            weight: 1.0
 
   offene_inhalte:
     name: "Offene Inhalte"
@@ -299,127 +183,71 @@ dimensions:
     factors:
       mediathek_archiv:
         name: "Mediathek und Archiv"
-        description: "Online-Verfügbarkeit von Inhalten"
-        factor_types:
-          online_verfuegbarkeit:
-            name: "Online-Verfügbarkeit"
-            description: "Mediathek und Online-Angebote"
-            criteria:
-              umfassende_mediathek:
-                name: "Umfassende Mediathek"
-                description: "Umfangreiche Online-Mediathek mit aktuellen und archivierten Inhalten"
-                type: "operational"
-                patterns:
-                  - "mediathek"
-                  - "archiv"
-                  - "online"
-                  - "stream"
-                  - "abruf"
-                weight: 1.0
-              
-              barrierefreie_inhalte:
-                name: "Barrierefreie Inhalte"
-                description: "Inhalte sind barrierefrei zugänglich (Untertitel, Audiodeskription)"
-                type: "operational"
-                patterns:
-                  - "untertitel"
-                  - "audiodeskription"
-                  - "gebärdensprache"
-                  - "barrierefrei"
-                  - "accessibility"
-                weight: 1.0
+        description: "Verfügbarkeit von Inhalten über Mediathek und Archive"
+        criteria:
+          umfassende_mediathek:
+            name: "Umfassende Mediathek"
+            description: "Mediathek mit breitem Angebot an Inhalten ist verfügbar"
+            type: "operational"
+            patterns:
+              text: ["mediathek", "archiv", "video", "audio", "streaming", "abruf"]
+            weight: 1.0
+          
+          barrierefreie_inhalte:
+            name: "Barrierefreie Inhalte"
+            description: "Inhalte sind barrierefrei zugänglich (Untertitel, Gebärdensprache)"
+            type: "operational"
+            patterns:
+              text: ["barrierefrei", "untertitel", "gebärdensprache", "audiodeskription", "zugänglich"]
+            weight: 1.0
           
           offene_lizenzen:
             name: "Offene Lizenzen"
-            description: "Verwendung offener Lizenzen für Inhalte"
-            criteria:
-              creative_commons:
-                name: "Creative Commons Lizenzen"
-                description: "Verwendung von Creative Commons oder anderen offenen Lizenzen"
-                type: "strategic"
-                patterns:
-                  - "creative commons"
-                  - "cc-lizenz"
-                  - "open content"
-                  - "freie lizenz"
-                  - "offene lizenz"
-                weight: 1.0
-              
-              oer_bildungsinhalte:
-                name: "OER Bildungsinhalte"
-                description: "Bereitstellung von Open Educational Resources"
-                type: "strategic"
-                patterns:
-                  - "oer"
-                  - "open educational resources"
-                  - "bildungsressourcen"
-                  - "lernmaterial"
-                  - "bildungsinhalte"
-                weight: 1.0
+            description: "Inhalte werden unter offenen Lizenzen bereitgestellt"
+            type: "strategic"
+            patterns:
+              text: ["creative commons", "offene lizenz", "cc-lizenz", "freie nutzung", "weiterverwendung"]
+            weight: 1.0
 
   journalistische_standards:
     name: "Journalistische Standards"
-    description: "Qualitätsstandards und journalistische Prinzipien"
+    description: "Einhaltung journalistischer Standards und Ethik"
     factors:
       ethik_standards:
         name: "Ethik und Standards"
-        description: "Journalistische Ethik und Qualitätsstandards"
-        factor_types:
-          pressekodex_ethik:
-            name: "Pressekodex und Ethik"
-            description: "Einhaltung journalistischer Ethikstandards"
-            criteria:
-              pressekodex_bekenntnis:
-                name: "Bekenntnis zum Pressekodex"
-                description: "Bekenntnis zum Pressekodex oder journalistischen Grundsätzen"
-                type: "strategic"
-                patterns:
-                  - "pressekodex"
-                  - "journalismus"
-                  - "ethik"
-                  - "grundsätze"
-                  - "standards"
-                weight: 1.0
-              
-              unabhaengigkeit:
-                name: "Redaktionelle Unabhängigkeit"
-                description: "Betonung der redaktionellen Unabhängigkeit"
-                type: "strategic"
-                patterns:
-                  - "unabhängigkeit"
-                  - "redaktionell"
-                  - "neutral"
-                  - "objektiv"
-                  - "pressefreiheit"
-                weight: 1.0
+        description: "Bekenntnis zu journalistischen Standards und Ethik"
+        criteria:
+          pressekodex:
+            name: "Bekenntnis zum Pressekodex"
+            description: "Bekenntnis zum Pressekodex oder journalistischen Grundsätzen"
+            type: "strategic"
+            patterns:
+              text: ["pressekodex", "journalismus", "ethik", "grundsätze", "standards"]
+            weight: 1.0
           
-          qualitaetssicherung:
-            name: "Qualitätssicherung"
-            description: "Maßnahmen zur Qualitätssicherung"
-            criteria:
-              beschwerdemanagement:
-                name: "Beschwerdemanagement"
-                description: "System für Programmbeschwerden und Ombudsverfahren"
-                type: "operational"
-                patterns:
-                  - "programmbeschwerde"
-                  - "beschwerde"
-                  - "ombudsmann"
-                  - "schlichtung"
-                  - "mediation"
-                weight: 1.0
-              
-              qualitaetsmanagement:
-                name: "Qualitätsmanagement"
-                description: "Qualitätsmanagement und -kontrolle sind etabliert"
-                type: "operational"
-                patterns:
-                  - "qualität"
-                  - "kontrolle"
-                  - "management"
-                  - "standard"
-                  - "richtlinie"
-                weight: 1.0
+          unabhaengigkeit:
+            name: "Redaktionelle Unabhängigkeit"
+            description: "Betonung der redaktionellen Unabhängigkeit"
+            type: "strategic"
+            patterns:
+              text: ["unabhängigkeit", "redaktionell", "neutral", "objektiv", "pressefreiheit"]
+            weight: 1.0
+          
+          beschwerdemanagement:
+            name: "Beschwerdemanagement"
+            description: "System für Programmbeschwerden und Ombudsverfahren"
+            type: "operational"
+            patterns:
+              text: ["programmbeschwerde", "beschwerde", "ombudsmann", "schlichtung", "mediation"]
+            weight: 1.0
+          
+          qualitaetsmanagement:
+            name: "Qualitätsmanagement"
+            description: "Qualitätsmanagement und -kontrolle sind etabliert"
+            type: "operational"
+            patterns:
+              text: ["qualität", "kontrolle", "management", "standard", "richtlinie"]
+            weight: 1.0
 
   innovation_technologie:
     name: "Innovation und Technologie"
@@ -428,59 +256,35 @@ dimensions:
       digitale_innovation:
         name: "Digitale Innovation"
         description: "Innovative digitale Angebote und Technologien"
-        factor_types:
-          neue_formate:
-            name: "Neue Formate"
-            description: "Innovative Medienformate und Darstellungsformen"
-            criteria:
-              interaktive_formate:
-                name: "Interaktive Formate"
-                description: "Interaktive und multimediale Inhaltsformate"
-                type: "operational"
-                patterns:
-                  - "interaktiv"
-                  - "multimedia"
-                  - "virtual reality"
-                  - "augmented reality"
-                  - "360-grad"
-                weight: 1.0
-              
-              podcast_audio:
-                name: "Podcast und Audio-Innovation"
-                description: "Innovative Audio-Formate und Podcast-Angebote"
-                type: "operational"
-                patterns:
-                  - "podcast"
-                  - "audio"
-                  - "hörspiel"
-                  - "feature"
-                  - "streaming"
-                weight: 1.0
+        criteria:
+          interaktive_formate:
+            name: "Interaktive Formate"
+            description: "Interaktive und multimediale Inhaltsformate"
+            type: "operational"
+            patterns:
+              text: ["interaktiv", "multimedia", "virtual reality", "augmented reality", "360-grad"]
+            weight: 1.0
           
-          technische_offenheit:
-            name: "Technische Offenheit"
-            description: "Offene technische Standards und APIs"
-            criteria:
-              offene_standards:
-                name: "Offene Standards"
-                description: "Verwendung offener technischer Standards"
-                type: "strategic"
-                patterns:
-                  - "open source"
-                  - "offene standards"
-                  - "api"
-                  - "rss"
-                  - "open data"
-                weight: 1.0
-              
-              entwicklerfreundlich:
-                name: "Entwicklerfreundliche Schnittstellen"
-                description: "APIs oder Schnittstellen für Entwickler verfügbar"
-                type: "strategic"
-                patterns:
-                  - "api"
-                  - "schnittstelle"
-                  - "entwickler"
-                  - "developer"
-                  - "integration"
-                weight: 1.0
+          podcast_audio:
+            name: "Podcast und Audio-Innovation"
+            description: "Innovative Audio-Formate und Podcast-Angebote"
+            type: "operational"
+            patterns:
+              text: ["podcast", "audio", "hörspiel", "feature", "streaming"]
+            weight: 1.0
+          
+          offene_standards:
+            name: "Offene Standards"
+            description: "Verwendung offener technischer Standards"
+            type: "strategic"
+            patterns:
+              text: ["open source", "offene standards", "api", "rss", "open data"]
+            weight: 1.0
+          
+          entwicklerfreundlich:
+            name: "Entwicklerfreundliche Schnittstellen"
+            description: "APIs oder Schnittstellen für Entwickler verfügbar"
+            type: "strategic"
+            patterns:
+              text: ["api", "schnittstelle", "entwickler", "developer", "integration"]
+            weight: 1.0
