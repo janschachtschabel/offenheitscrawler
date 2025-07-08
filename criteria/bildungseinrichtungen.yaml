@@ -1,0 +1,252 @@
+metadata:
+  name: "Bildungseinrichtungen"
+  description: "Kriterienkatalog für die Bewertung der Offenheit von allgemeinen Bildungseinrichtungen wie Schulen, Volkshochschulen und Weiterbildungseinrichtungen"
+  version: "2.0"
+  organization_type: "bildungseinrichtungen"
+  created_date: "2025-01-08"
+  author: "Offenheitscrawler Team"
+
+dimensions:
+  offene_bildungsressourcen_und_lehrmaterialien:
+    name: "Offene Bildungsressourcen & Lehrmaterialien"
+    description: "Bereitstellung und Nutzung offener Bildungsressourcen"
+    factors:
+      oer_bereitstellung:
+        name: "Open Educational Resources (OER) Bereitstellung"
+        description: "Veröffentlichung eigener Lehrmaterialien unter offenen Lizenzen"
+        criteria:
+          oer_materialien_verfuegbar:
+            name: "OER-Materialien verfügbar"
+            description: "Lehrmaterialien unter Creative Commons oder anderen offenen Lizenzen"
+            type: "operational"
+            patterns:
+              text: ["oer", "open educational resources", "creative commons", "freie lernmaterialien", "cc by", "offene lizenz"]
+            weight: 1.0
+          
+          oer_repository:
+            name: "OER-Repository oder Plattform"
+            description: "Eigenes Repository oder Verlinkung zu OER-Plattformen"
+            type: "operational"
+            patterns:
+              text: ["oer repository", "lernmaterialien datenbank", "bildungsserver", "mundo", "wirlernenonline"]
+            weight: 1.0
+          
+          oer_policy:
+            name: "OER-Policy oder Leitlinie"
+            description: "Strategische Ausrichtung zur Nutzung und Erstellung von OER"
+            type: "strategic"
+            patterns:
+              text: ["oer policy", "oer leitlinie", "freie bildungsressourcen strategie", "open education"]
+            weight: 1.0
+      
+      digitale_lernplattformen:
+        name: "Offene digitale Lernplattformen"
+        description: "Einsatz offener Software für digitales Lernen"
+        criteria:
+          offene_lms:
+            name: "Nutzung offener Lernmanagementsysteme"
+            description: "Einsatz von Open Source LMS wie Moodle, ILIAS"
+            type: "operational"
+            patterns:
+              text: ["moodle", "ilias", "open source lms", "freie lernplattform"]
+            weight: 1.0
+          
+          offene_tools:
+            name: "Offene digitale Werkzeuge"
+            description: "Verwendung offener Software für Kommunikation und Zusammenarbeit"
+            type: "operational"
+            patterns:
+              text: ["nextcloud", "bigbluebutton", "jitsi", "open source tools", "freie software"]
+            weight: 1.0
+
+  partizipation_und_co_creation:
+    name: "Partizipation & Co-Creation"
+    description: "Beteiligung der Lerngemeinschaft an Bildungsprozessen"
+    factors:
+      lernende_beteiligung:
+        name: "Beteiligung der Lernenden"
+        description: "Aktive Einbindung von Schülern und Studierenden"
+        criteria:
+          schuelervertretung_aktiv:
+            name: "Aktive Schüler-/Studierendenvertretung"
+            description: "Starke Rolle der Lernenden in Entscheidungsprozessen"
+            type: "operational"
+            patterns:
+              text: ["schülervertretung", "studierendenvertretung", "smv", "schülerrat", "partizipation", "mitbestimmung"]
+            weight: 1.0
+          
+          peer_learning:
+            name: "Peer-Learning und kollaborative Lernformen"
+            description: "Förderung von Lernen zwischen Gleichaltrigen"
+            type: "operational"
+            patterns:
+              text: ["peer learning", "kollaboratives lernen", "gruppenarbeit", "schüler helfen schülern", "tutoring"]
+            weight: 1.0
+          
+          projektbasiertes_lernen:
+            name: "Projektbasiertes und problemorientiertes Lernen"
+            description: "Lernformen mit realen Problemstellungen und Projekten"
+            type: "operational"
+            patterns:
+              text: ["projektbasiertes lernen", "problemorientiertes lernen", "praxisprojekte", "service learning"]
+            weight: 1.0
+      
+      community_einbindung:
+        name: "Community-Einbindung"
+        description: "Öffnung der Bildungseinrichtung zur Gemeinschaft"
+        criteria:
+          externe_kooperationen:
+            name: "Kooperationen mit externen Partnern"
+            description: "Zusammenarbeit mit lokalen Organisationen und Unternehmen"
+            type: "operational"
+            patterns:
+              text: ["kooperationen", "partnerschaften", "externe partner", "community partner", "netzwerk"]
+            weight: 1.0
+          
+          oeffentliche_veranstaltungen:
+            name: "Öffentliche Bildungsveranstaltungen"
+            description: "Veranstaltungen für die breite Öffentlichkeit"
+            type: "operational"
+            patterns:
+              text: ["öffentliche veranstaltungen", "community events", "tag der offenen tür", "bildungsangebote für alle"]
+            weight: 1.0
+
+  transparenz_und_governance:
+    name: "Transparenz & Governance"
+    description: "Offenheit in Verwaltung und Entscheidungsprozessen"
+    factors:
+      institutionelle_transparenz:
+        name: "Institutionelle Transparenz"
+        description: "Offenlegung von Strukturen und Entscheidungen"
+        criteria:
+          organigramm_verfuegbar:
+            name: "Organisationsstruktur transparent"
+            description: "Klare Darstellung der Organisationsstruktur und Zuständigkeiten"
+            type: "operational"
+            patterns:
+              text: ["organigramm", "organisationsstruktur", "team", "leitung", "schulleitung", "verwaltung"]
+            weight: 1.0
+          
+          entscheidungsprozesse:
+            name: "Transparente Entscheidungsprozesse"
+            description: "Offenlegung von Entscheidungswegen und Beteiligungsmöglichkeiten"
+            type: "strategic"
+            patterns:
+              text: ["entscheidungsprozesse", "gremienarbeit", "schulkonferenz", "beirat", "demokratische teilhabe"]
+            weight: 1.0
+          
+          jahresberichte:
+            name: "Regelmäßige Berichterstattung"
+            description: "Veröffentlichung von Jahres- oder Tätigkeitsberichten"
+            type: "operational"
+            patterns:
+              text: ["jahresbericht", "tätigkeitsbericht", "schulbericht", "rechenschaftsbericht"]
+            weight: 1.0
+      
+      finanzielle_transparenz:
+        name: "Finanzielle Transparenz"
+        description: "Offenlegung von Finanzinformationen"
+        criteria:
+          haushaltsplanung:
+            name: "Transparente Haushaltsplanung"
+            description: "Offenlegung von Haushaltsplänen und Mittelverwendung"
+            type: "operational"
+            patterns:
+              text: ["haushaltsplan", "budget", "finanzierung", "mittelverwendung", "fördergelder"]
+            weight: 1.0
+
+  offene_werte_und_zugaenglichkeit:
+    name: "Offene Werte & Zugänglichkeit"
+    description: "Bekenntnis zu Offenheit, Inklusion und Barrierefreiheit"
+    factors:
+      inklusion_und_vielfalt:
+        name: "Inklusion und Vielfalt"
+        description: "Maßnahmen für inklusive Bildung"
+        criteria:
+          inklusive_bildung:
+            name: "Inklusive Bildungsansätze"
+            description: "Konzepte und Maßnahmen für inklusive Bildung"
+            type: "strategic"
+            patterns:
+              text: ["inklusive bildung", "inklusion", "vielfalt", "diversity", "integration", "barrierefreies lernen"]
+            weight: 1.0
+          
+          mehrsprachige_angebote:
+            name: "Mehrsprachige Bildungsangebote"
+            description: "Unterstützung für mehrsprachige Lernende"
+            type: "operational"
+            patterns:
+              text: ["mehrsprachig", "daf", "deutsch als fremdsprache", "herkunftssprachen", "sprachförderung"]
+            weight: 1.0
+          
+          barrierefreiheitserklaerung:
+            name: "Barrierefreiheitserklärung"
+            description: "Veröffentlichung einer Barrierefreiheitserklärung"
+            type: "operational"
+            patterns:
+              text: ["barrierefreiheitserklärung", "accessibility statement", "wcag", "barrierefreiheit"]
+            weight: 1.0
+      
+      soziale_offenheit:
+        name: "Soziale Offenheit"
+        description: "Maßnahmen zur Förderung sozialer Teilhabe"
+        criteria:
+          chancengerechtigkeit:
+            name: "Maßnahmen für Chancengerechtigkeit"
+            description: "Programme zur Förderung benachteiligter Gruppen"
+            type: "operational"
+            patterns:
+              text: ["chancengerechtigkeit", "bildungsgerechtigkeit", "förderung", "unterstützung", "sozialindex"]
+            weight: 1.0
+          
+          kostenfreie_angebote:
+            name: "Kostenfreie oder ermäßigte Angebote"
+            description: "Zugängliche Bildungsangebote unabhängig von finanziellen Möglichkeiten"
+            type: "operational"
+            patterns:
+              text: ["kostenlos", "kostenfrei", "ermäßigung", "stipendien", "bildungspaket", "lernmittelfreiheit"]
+            weight: 1.0
+
+  innovation_und_offene_bildungspraktiken:
+    name: "Innovation & Offene Bildungspraktiken"
+    description: "Innovative und offene Ansätze in der Bildung"
+    factors:
+      offene_lernformen:
+        name: "Offene und flexible Lernformen"
+        description: "Alternative und flexible Lernansätze"
+        criteria:
+          flexible_lernzeiten:
+            name: "Flexible Lernzeiten und -orte"
+            description: "Möglichkeiten für individualisiertes Lernen"
+            type: "operational"
+            patterns:
+              text: ["flexible lernzeiten", "individualisierung", "selbstgesteuertes lernen", "blended learning"]
+            weight: 1.0
+          
+          offene_lernräume:
+            name: "Offene Lernräume und Lernlandschaften"
+            description: "Flexible und offene Raumkonzepte für das Lernen"
+            type: "operational"
+            patterns:
+              text: ["offene lernräume", "lernlandschaften", "flexible klassenräume", "learning spaces"]
+            weight: 1.0
+      
+      digitale_innovation:
+        name: "Digitale Innovation in der Bildung"
+        description: "Innovative Nutzung digitaler Technologien"
+        criteria:
+          maker_spaces:
+            name: "Maker Spaces und FabLabs"
+            description: "Räume für kreatives und technisches Arbeiten"
+            type: "operational"
+            patterns:
+              text: ["maker space", "fablab", "3d druck", "robotik", "coding", "programmieren"]
+            weight: 1.0
+          
+          ki_und_digitale_kompetenzen:
+            name: "KI und digitale Kompetenzen"
+            description: "Vermittlung von KI-Kenntnissen und digitalen Kompetenzen"
+            type: "operational"
+            patterns:
+              text: ["künstliche intelligenz", "ki", "digitale kompetenzen", "medienkompetenz", "computational thinking"]
+            weight: 1.0

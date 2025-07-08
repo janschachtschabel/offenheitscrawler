@@ -1,0 +1,486 @@
+metadata:
+  name: "Öffentlich-rechtlicher Rundfunk"
+  description: "Kriterienkatalog für öffentlich-rechtliche Rundfunkanstalten und Medienunternehmen"
+  version: "2.0"
+  organization_type: "oeffentlich_rechtlicher_rundfunk"
+  created_date: "2025-01-08"
+  updated_date: "2025-01-08"
+  author: "Offenheitscrawler Team"
+  changes: "Überarbeitung auf neue Struktur ohne URL-Patterns und confidence_threshold"
+
+dimensions:
+  transparenz:
+    name: "Transparenz"
+    description: "Offenlegung von Informationen über die Rundfunkanstalt"
+    factors:
+      grundinformationen:
+        name: "Grundinformationen"
+        description: "Verfügbarkeit grundlegender Informationen über die Rundfunkanstalt"
+        factor_types:
+          kontakt_impressum:
+            name: "Kontakt und Impressum"
+            description: "Vollständige Kontakt- und Impressumsdaten"
+            criteria:
+              vollstaendiges_impressum:
+                name: "Vollständiges Impressum vorhanden"
+                description: "Impressum mit allen gesetzlich vorgeschriebenen Angaben ist verfügbar"
+                type: "operational"
+                patterns:
+                  - "impressum"
+                  - "kontakt"
+                  - "adresse"
+                  - "telefon"
+                  - "email"
+                  - "verantwortlich"
+                weight: 1.0
+              
+              ansprechpartner:
+                name: "Klare Ansprechpartner benannt"
+                description: "Ansprechpartner für verschiedene Bereiche sind klar benannt"
+                type: "operational"
+                patterns:
+                  - "ansprechpartner"
+                  - "redaktion"
+                  - "pressestelle"
+                  - "kontaktperson"
+                  - "zuständig"
+                weight: 1.0
+          
+          auftrag_mission:
+            name: "Auftrag und Mission"
+            description: "Öffentlich-rechtlicher Auftrag und Mission"
+            criteria:
+              programmauftrag:
+                name: "Programmauftrag klar beschrieben"
+                description: "Der öffentlich-rechtliche Programmauftrag ist klar beschrieben"
+                type: "strategic"
+                patterns:
+                  - "programmauftrag"
+                  - "öffentlich-rechtlich"
+                  - "auftrag"
+                  - "mission"
+                  - "grundversorgung"
+                  - "bildungsauftrag"
+                weight: 1.0
+              
+              gesellschaftlicher_auftrag:
+                name: "Gesellschaftlicher Auftrag definiert"
+                description: "Der gesellschaftliche Auftrag und die Rolle in der Demokratie sind definiert"
+                type: "strategic"
+                patterns:
+                  - "gesellschaftlicher auftrag"
+                  - "demokratie"
+                  - "meinungsbildung"
+                  - "gesellschaft"
+                  - "öffentlichkeit"
+                weight: 1.0
+      
+      organisation_struktur:
+        name: "Organisation und Struktur"
+        description: "Transparenz über Organisationsstruktur und Gremien"
+        factor_types:
+          organisationsstruktur:
+            name: "Organisationsstruktur"
+            description: "Aufbau und Struktur der Organisation"
+            criteria:
+              organigramm:
+                name: "Organigramm verfügbar"
+                description: "Organigramm oder Darstellung der Organisationsstruktur ist verfügbar"
+                type: "operational"
+                patterns:
+                  - "organigramm"
+                  - "organisation"
+                  - "struktur"
+                  - "aufbau"
+                  - "hierarchie"
+                weight: 1.0
+              
+              gremien_darstellung:
+                name: "Gremien dargestellt"
+                description: "Rundfunkrat, Verwaltungsrat und andere Gremien sind dargestellt"
+                type: "operational"
+                patterns:
+                  - "rundfunkrat"
+                  - "verwaltungsrat"
+                  - "gremien"
+                  - "aufsicht"
+                  - "kontrolle"
+                weight: 1.0
+          
+          fuehrung_leitung:
+            name: "Führung und Leitung"
+            description: "Informationen über Führungskräfte und Leitung"
+            criteria:
+              geschaeftsfuehrung:
+                name: "Geschäftsführung vorgestellt"
+                description: "Geschäftsführung oder Intendanz ist mit Personen vorgestellt"
+                type: "operational"
+                patterns:
+                  - "intendant"
+                  - "geschäftsführung"
+                  - "direktor"
+                  - "leitung"
+                  - "vorstand"
+                weight: 1.0
+              
+              programmverantwortung:
+                name: "Programmverantwortung benannt"
+                description: "Verantwortliche für Programmbereiche sind benannt"
+                type: "operational"
+                patterns:
+                  - "programmverantwortung"
+                  - "chefredakteur"
+                  - "programmleitung"
+                  - "redaktionsleitung"
+                weight: 1.0
+
+  partizipation:
+    name: "Partizipation"
+    description: "Beteiligung der Öffentlichkeit und demokratische Teilhabe"
+    factors:
+      publikumsbeteiligung:
+        name: "Publikumsbeteiligung"
+        description: "Möglichkeiten zur aktiven Beteiligung des Publikums"
+        factor_types:
+          service_kontakt:
+            name: "Service und Kontakt"
+            description: "Publikumsservice und Kontaktmöglichkeiten"
+            criteria:
+              zuschauerservice:
+                name: "Umfassender Zuschauerservice"
+                description: "Zuschauerservice mit verschiedenen Kontaktmöglichkeiten ist verfügbar"
+                type: "operational"
+                patterns:
+                  - "zuschauerservice"
+                  - "publikumsservice"
+                  - "hörerservice"
+                  - "service"
+                  - "hotline"
+                weight: 1.0
+              
+              feedback_system:
+                name: "Strukturiertes Feedback-System"
+                description: "System für Zuschauer-Feedback und Rückmeldungen ist etabliert"
+                type: "operational"
+                patterns:
+                  - "feedback"
+                  - "rückmeldung"
+                  - "bewertung"
+                  - "meinung"
+                  - "kommentar"
+                weight: 1.0
+          
+          interaktion_dialog:
+            name: "Interaktion und Dialog"
+            description: "Dialogformate und Interaktionsmöglichkeiten"
+            criteria:
+              buergerdialog:
+                name: "Bürgerdialog-Formate"
+                description: "Formate für den Dialog mit Bürgern sind etabliert"
+                type: "operational"
+                patterns:
+                  - "bürgerdialog"
+                  - "diskussion"
+                  - "forum"
+                  - "dialog"
+                  - "beteiligung"
+                weight: 1.0
+              
+              social_media_interaktion:
+                name: "Social Media Interaktion"
+                description: "Aktive Interaktion über Social Media Kanäle"
+                type: "operational"
+                patterns:
+                  - "social media"
+                  - "facebook"
+                  - "twitter"
+                  - "instagram"
+                  - "interaktion"
+                weight: 1.0
+      
+      demokratische_kontrolle:
+        name: "Demokratische Kontrolle"
+        description: "Gremien und demokratische Kontrollmechanismen"
+        factor_types:
+          aufsichtsgremien:
+            name: "Aufsichtsgremien"
+            description: "Rundfunkrat und andere Aufsichtsgremien"
+            criteria:
+              rundfunkrat_transparent:
+                name: "Rundfunkrat transparent dargestellt"
+                description: "Rundfunkrat, seine Zusammensetzung und Aufgaben sind transparent dargestellt"
+                type: "strategic"
+                patterns:
+                  - "rundfunkrat"
+                  - "aufsicht"
+                  - "kontrolle"
+                  - "gremium"
+                  - "zusammensetzung"
+                weight: 1.0
+              
+              gremienarbeit_oeffentlich:
+                name: "Öffentliche Gremienarbeit"
+                description: "Gremienarbeit ist öffentlich und nachvollziehbar"
+                type: "strategic"
+                patterns:
+                  - "öffentlich"
+                  - "sitzung"
+                  - "protokoll"
+                  - "beschluss"
+                  - "nachvollziehbar"
+                weight: 1.0
+
+  rechenschaftslegung:
+    name: "Rechenschaftslegung"
+    description: "Transparenz über Finanzen und Rechenschaftslegung"
+    factors:
+      finanzielle_transparenz:
+        name: "Finanzielle Transparenz"
+        description: "Offenlegung von Finanzen und Haushaltsführung"
+        factor_types:
+          berichte_dokumentation:
+            name: "Berichte und Dokumentation"
+            description: "Verfügbarkeit von Geschäfts- und Finanzberichten"
+            criteria:
+              jahresbericht:
+                name: "Jahresbericht verfügbar"
+                description: "Aktueller Jahres- oder Geschäftsbericht ist öffentlich verfügbar"
+                type: "strategic"
+                patterns:
+                  - "jahresbericht"
+                  - "geschäftsbericht"
+                  - "tätigkeitsbericht"
+                  - "annual report"
+                weight: 1.0
+              
+              finanzbericht:
+                name: "Detaillierter Finanzbericht"
+                description: "Detaillierte Finanzberichte oder Haushaltsplan sind verfügbar"
+                type: "strategic"
+                patterns:
+                  - "finanzbericht"
+                  - "haushalt"
+                  - "budget"
+                  - "bilanz"
+                  - "finanzen"
+                weight: 1.0
+          
+          rundfunkbeitrag_transparenz:
+            name: "Rundfunkbeitrag Transparenz"
+            description: "Transparenz über Rundfunkbeitrag und dessen Verwendung"
+            criteria:
+              beitragsinformation:
+                name: "Rundfunkbeitrag erklärt"
+                description: "Informationen über Höhe und Zweck des Rundfunkbeitrags sind verfügbar"
+                type: "strategic"
+                patterns:
+                  - "rundfunkbeitrag"
+                  - "gebühr"
+                  - "finanzierung"
+                  - "beitrag"
+                  - "gez"
+                weight: 1.0
+              
+              mittelverwendung:
+                name: "Transparente Mittelverwendung"
+                description: "Verwendung der Rundfunkbeiträge ist transparent dargestellt"
+                type: "strategic"
+                patterns:
+                  - "verwendung"
+                  - "ausgaben"
+                  - "kosten"
+                  - "mittel"
+                  - "investition"
+                weight: 1.0
+
+  offene_inhalte:
+    name: "Offene Inhalte"
+    description: "Verfügbarkeit und Offenheit von Medieninhalten"
+    factors:
+      mediathek_archiv:
+        name: "Mediathek und Archiv"
+        description: "Online-Verfügbarkeit von Inhalten"
+        factor_types:
+          online_verfuegbarkeit:
+            name: "Online-Verfügbarkeit"
+            description: "Mediathek und Online-Angebote"
+            criteria:
+              umfassende_mediathek:
+                name: "Umfassende Mediathek"
+                description: "Umfangreiche Online-Mediathek mit aktuellen und archivierten Inhalten"
+                type: "operational"
+                patterns:
+                  - "mediathek"
+                  - "archiv"
+                  - "online"
+                  - "stream"
+                  - "abruf"
+                weight: 1.0
+              
+              barrierefreie_inhalte:
+                name: "Barrierefreie Inhalte"
+                description: "Inhalte sind barrierefrei zugänglich (Untertitel, Audiodeskription)"
+                type: "operational"
+                patterns:
+                  - "untertitel"
+                  - "audiodeskription"
+                  - "gebärdensprache"
+                  - "barrierefrei"
+                  - "accessibility"
+                weight: 1.0
+          
+          offene_lizenzen:
+            name: "Offene Lizenzen"
+            description: "Verwendung offener Lizenzen für Inhalte"
+            criteria:
+              creative_commons:
+                name: "Creative Commons Lizenzen"
+                description: "Verwendung von Creative Commons oder anderen offenen Lizenzen"
+                type: "strategic"
+                patterns:
+                  - "creative commons"
+                  - "cc-lizenz"
+                  - "open content"
+                  - "freie lizenz"
+                  - "offene lizenz"
+                weight: 1.0
+              
+              oer_bildungsinhalte:
+                name: "OER Bildungsinhalte"
+                description: "Bereitstellung von Open Educational Resources"
+                type: "strategic"
+                patterns:
+                  - "oer"
+                  - "open educational resources"
+                  - "bildungsressourcen"
+                  - "lernmaterial"
+                  - "bildungsinhalte"
+                weight: 1.0
+
+  journalistische_standards:
+    name: "Journalistische Standards"
+    description: "Qualitätsstandards und journalistische Prinzipien"
+    factors:
+      ethik_standards:
+        name: "Ethik und Standards"
+        description: "Journalistische Ethik und Qualitätsstandards"
+        factor_types:
+          pressekodex_ethik:
+            name: "Pressekodex und Ethik"
+            description: "Einhaltung journalistischer Ethikstandards"
+            criteria:
+              pressekodex_bekenntnis:
+                name: "Bekenntnis zum Pressekodex"
+                description: "Bekenntnis zum Pressekodex oder journalistischen Grundsätzen"
+                type: "strategic"
+                patterns:
+                  - "pressekodex"
+                  - "journalismus"
+                  - "ethik"
+                  - "grundsätze"
+                  - "standards"
+                weight: 1.0
+              
+              unabhaengigkeit:
+                name: "Redaktionelle Unabhängigkeit"
+                description: "Betonung der redaktionellen Unabhängigkeit"
+                type: "strategic"
+                patterns:
+                  - "unabhängigkeit"
+                  - "redaktionell"
+                  - "neutral"
+                  - "objektiv"
+                  - "pressefreiheit"
+                weight: 1.0
+          
+          qualitaetssicherung:
+            name: "Qualitätssicherung"
+            description: "Maßnahmen zur Qualitätssicherung"
+            criteria:
+              beschwerdemanagement:
+                name: "Beschwerdemanagement"
+                description: "System für Programmbeschwerden und Ombudsverfahren"
+                type: "operational"
+                patterns:
+                  - "programmbeschwerde"
+                  - "beschwerde"
+                  - "ombudsmann"
+                  - "schlichtung"
+                  - "mediation"
+                weight: 1.0
+              
+              qualitaetsmanagement:
+                name: "Qualitätsmanagement"
+                description: "Qualitätsmanagement und -kontrolle sind etabliert"
+                type: "operational"
+                patterns:
+                  - "qualität"
+                  - "kontrolle"
+                  - "management"
+                  - "standard"
+                  - "richtlinie"
+                weight: 1.0
+
+  innovation_technologie:
+    name: "Innovation und Technologie"
+    description: "Innovative Ansätze und technologische Offenheit"
+    factors:
+      digitale_innovation:
+        name: "Digitale Innovation"
+        description: "Innovative digitale Angebote und Technologien"
+        factor_types:
+          neue_formate:
+            name: "Neue Formate"
+            description: "Innovative Medienformate und Darstellungsformen"
+            criteria:
+              interaktive_formate:
+                name: "Interaktive Formate"
+                description: "Interaktive und multimediale Inhaltsformate"
+                type: "operational"
+                patterns:
+                  - "interaktiv"
+                  - "multimedia"
+                  - "virtual reality"
+                  - "augmented reality"
+                  - "360-grad"
+                weight: 1.0
+              
+              podcast_audio:
+                name: "Podcast und Audio-Innovation"
+                description: "Innovative Audio-Formate und Podcast-Angebote"
+                type: "operational"
+                patterns:
+                  - "podcast"
+                  - "audio"
+                  - "hörspiel"
+                  - "feature"
+                  - "streaming"
+                weight: 1.0
+          
+          technische_offenheit:
+            name: "Technische Offenheit"
+            description: "Offene technische Standards und APIs"
+            criteria:
+              offene_standards:
+                name: "Offene Standards"
+                description: "Verwendung offener technischer Standards"
+                type: "strategic"
+                patterns:
+                  - "open source"
+                  - "offene standards"
+                  - "api"
+                  - "rss"
+                  - "open data"
+                weight: 1.0
+              
+              entwicklerfreundlich:
+                name: "Entwicklerfreundliche Schnittstellen"
+                description: "APIs oder Schnittstellen für Entwickler verfügbar"
+                type: "strategic"
+                patterns:
+                  - "api"
+                  - "schnittstelle"
+                  - "entwickler"
+                  - "developer"
+                  - "integration"
+                weight: 1.0
