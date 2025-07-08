@@ -1,0 +1,24 @@
+﻿Kriterium_ID;Kriterium_Name;Anzahl_Organisationen;Erfüllte_Organisationen;Nicht_Erfüllte_Organisationen;Erfüllungsrate_Prozent;Durchschnittliche_Konfidenz;Katalog;Bewertungsdatum
+hoher_anteil_open_access;Hoher Anteil von Publikationen unter Open Access;122;71;51;58.2%;0.30;hochschulen;2025-07-08 21:33:05
+institutionelles_repository;Bereitstellung eines institutionellen Repositoriums für Open Access Publikationen;122;25;97;20.5%;0.11;hochschulen;2025-07-08 21:33:05
+open_access_policy;Vorhandensein einer institutionellen Open Access Policy oder Leitlinie;122;5;117;4.1%;0.02;hochschulen;2025-07-08 21:33:05
+veroeffentlichung_forschungsdaten;Veröffentlichung von Forschungsdaten in einem Datenrepositorium;122;55;67;45.1%;0.23;hochschulen;2025-07-08 21:33:05
+fair_prinzipien;Bekenntnis zu FAIR Prinzipien;122;54;68;44.3%;0.23;hochschulen;2025-07-08 21:33:05
+forschungsdatenmanagement;Vorhandensein einer Infrastruktur für Forschungsdatenmanagement;122;46;76;37.7%;0.26;hochschulen;2025-07-08 21:33:05
+offene_lernplattform;Nutzung einer offenen Lernplattform;122;71;51;58.2%;0.31;hochschulen;2025-07-08 21:33:05
+offene_kommunikationstools;Nutzung offener Kommunikations- oder Kollaborationstools;122;93;29;76.2%;0.38;hochschulen;2025-07-08 21:33:05
+open_source_strategie;Strategie zur Nutzung von Open Source Software;122;0;122;0.0%;0.00;hochschulen;2025-07-08 21:33:05
+oer_repository;Vorhandensein eines OER-Repositories/Plattformverlinkung;122;61;61;50.0%;0.26;hochschulen;2025-07-08 21:33:05
+oer_materialien_anzahl;Anzahl der unter offener Lizenz veröffentlichten Lernmaterialien;122;16;106;13.1%;0.07;hochschulen;2025-07-08 21:33:05
+oer_policy;Erwähnung einer OER-Policy oder OER-Strategie;122;0;122;0.0%;0.00;hochschulen;2025-07-08 21:33:05
+forschungsmethoden_protokolle;Veröffentlichung von detaillierten Forschungsmethoden, Protokollen oder Materialien;122;98;24;80.3%;0.43;hochschulen;2025-07-08 21:33:05
+praeregistrierung;Präregistrierung von Studien oder Protokollen;122;1;121;0.8%;0.00;hochschulen;2025-07-08 21:33:05
+forschungssoftware_code;Veröffentlichung von Forschungs-Software und -Code;122;85;37;69.7%;0.35;hochschulen;2025-07-08 21:33:05
+citizen_science_projekte;Durchführung oder Beteiligung an Citizen Science Projekten;122;10;112;8.2%;0.04;hochschulen;2025-07-08 21:33:05
+verstaendliche_aufbereitung;Verständliche Aufbereitung und Kommunikation von Forschungsergebnissen für die breite Öffentlichkeit;122;47;75;38.5%;0.19;hochschulen;2025-07-08 21:33:05
+direkter_dialog;Angebote zum direkten Dialog;122;70;52;57.4%;0.29;hochschulen;2025-07-08 21:33:05
+finanzberichte;Veröffentlichung relevanter Finanzberichte;122;32;90;26.2%;0.13;hochschulen;2025-07-08 21:33:05
+kontaktmoeglichkeiten;Bereitstellung umfassender Kontaktmöglichkeiten für Hochschulleitung und Verwaltung;122;98;24;80.3%;0.56;hochschulen;2025-07-08 21:33:05
+organigramm;Veröffentlichung von Organigrammen oder Zuständigkeiten;122;95;27;77.9%;0.41;hochschulen;2025-07-08 21:33:05
+barrierefreiheitserklaerung;Vorhandensein einer Barrierefreiheitserklärung;122;78;44;63.9%;0.33;hochschulen;2025-07-08 21:33:05
+leichte_sprache;Angebote in Leichter Sprache oder mehrsprachige Informationen;122;96;26;78.7%;0.43;hochschulen;2025-07-08 21:33:05

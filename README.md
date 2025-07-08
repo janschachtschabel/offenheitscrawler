@@ -2,9 +2,15 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-red.svg)](https://streamlit.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Ein intelligenter, KI-gestützter Web-Crawler mit modernem Streamlit-Interface zur automatischen Bewertung von Offenheitskriterien bei verschiedenen Organisationstypen.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Mnpwi9xlfdoUsNpBvwRCHkkiLmUkY2s3?usp=sharing)
+
+**📊 [Demo: Offenheitscrawler Google Colab Notebook](https://colab.research.google.com/drive/1Mnpwi9xlfdoUsNpBvwRCHkkiLmUkY2s3?usp=sharing)**
+
+> Testen Sie den Offenheitscrawler direkt im Browser – keine lokale Installation nötig!
 
 ## ✨ Hauptfunktionen
 
@@ -62,7 +68,7 @@ Dimensionen → Faktoren → Faktortypen → Kriterien
 
 ```bash
 # 1. Repository klonen
-git clone <repository-url>
+git clone https://github.com/janschachtschabel/offenheitscrawler
 cd offenheitscrawler
 
 # 2. Virtuelle Umgebung erstellen
@@ -451,14 +457,14 @@ Beim Melden von Bugs bitte folgende Informationen angeben:
 
 ## 📄 Lizenz
 
-Dieses Projekt steht unter der **MIT-Lizenz**. Siehe `LICENSE` Datei für Details.
+Dieses Projekt steht unter der **Apache 2.0 Lizenz**. Siehe `LICENSE` Datei für Details.
 
 ## 🆘 Support
 
 ### 📞 Kontakt
 
-- **Issues:** [GitHub Issues](https://github.com/your-repo/offenheitscrawler/issues)
-- **Diskussionen:** [GitHub Discussions](https://github.com/your-repo/offenheitscrawler/discussions)
+- **Issues:** [GitHub Issues](https://github.com/janschachtschabel/offenheitscrawler/issues)
+- **Diskussionen:** [GitHub Discussions](https://github.com/janschachtschabel/offenheitscrawler/discussions)
 - **E-Mail:** support@offenheitscrawler.de
 
 ### 📚 Weitere Ressourcen
@@ -470,4 +476,4 @@ Dieses Projekt steht unter der **MIT-Lizenz**. Siehe `LICENSE` Datei für Detail
 
 ---
 
-**Entwickelt mit ❤️ für mehr Transparenz und Offenheit in Organisationen**
+**Entwickelt mit ❤️ für mehr Transparenz und Offenheit**
